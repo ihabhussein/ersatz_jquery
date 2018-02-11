@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ersatz JQuery</title>
+</head>
+<body>
+
+    <button id="btnshow">Show</button>
+    <button id="btnhide">Hide</button>
+    <button id="btnrainbow">Rainbow</button>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit massa mauris
+    platea penatibus. Curabitur dis commodo ante erat mauris interdum netus
+    sociosqu venenatis convallis sodales, sociis etiam facilisis diam arcu id
+    tincidunt ullamcorper nam accumsan tellus scelerisque, libero torquent
+    porttitor pellentesque iaculis cras turpis purus duis vivamus. Parturient a
+    maecenas accumsan convallis donec rutrum class aliquam, ultrices nec nisl
+    orci imperdiet et primis, justo in curabitur tristique ante tempus
+    hendrerit. Nec sollicitudin hac maecenas interdum potenti sociis aliquet
+    purus fames suscipit varius nisi diam, in primis imperdiet porttitor eros
+    scelerisque nam sodales a et quisque. Mi proin habitant mattis semper
+    euismod vulputate hendrerit nisi, hac fringilla facilisis erat taciti
+    placerat nullam natoque, varius vitae id magna urna ullamcorper mollis.
+    Praesent lacinia nascetur volutpat class auctor hac consequat mattis, libero
+    integer condimentum commodo tempus quisque id platea, ac dui habitasse nam
+    fusce maecenas facilisi.</p>
+
+    <p class="abc">Sed metus neque vivamus malesuada a rhoncus rutrum fringilla
+    interdum ad, montes scelerisque elementum praesent bibendum nam cursus netus
+    arcu, nulla eu sem aliquam ultrices dui cras senectus quis. Velit curae
+    morbi vestibulum ad senectus ridiculus tortor nulla, vehicula dignissim
+    nostra massa tristique eleifend dictumst class ac, placerat consequat
+    fringilla erat montes rhoncus mollis. Vehicula nam ornare rhoncus mollis
+    accumsan venenatis velit conubia, pharetra mi himenaeos nunc consequat
+    semper eget urna, fermentum sociosqu natoque pulvinar cras convallis nullam.
+    Ac libero nisi faucibus nullam sociis potenti netus non morbi condimentum,
+    commodo nascetur maecenas sem consequat quis aptent congue sollicitudin in,
+    fusce luctus torquent tortor egestas mollis pulvinar conubia venenatis.
+    Purus gravida libero ligula hendrerit augue cras ante etiam urna lacinia,
+    velit pellentesque facilisi condimentum fermentum sollicitudin dis fames
+    ornare habitant tincidunt, suspendisse natoque neque nisi posuere curae
+    conubia facilisis ut. Fusce tempus massa netus leo aptent porta nulla,
+    lacinia condimentum vitae semper malesuada iaculis vulputate, praesent
+    convallis sodales duis habitant augue. Laoreet nec pulvinar taciti ultrices
+    non libero nisl luctus dignissim curae mus sodales, sapien quisque molestie
+    netus ligula mattis nostra eu facilisi dictumst lacinia.</p>
+
+    <p class="rainbow">Est facilisi taciti felis imperdiet id leo convallis
+    morbi sed suspendisse, fermentum potenti risus vivamus vulputate pretium
+    sollicitudin eros dapibus auctor, blandit dui fames malesuada nec ultrices
+    cum a augue. Rhoncus molestie pellentesque imperdiet posuere id pharetra
+    eros maecenas vehicula phasellus vulputate, sapien velit litora curae
+    ridiculus ut pulvinar tellus porta conubia. Sed posuere quisque potenti
+    justo aliquet nibh phasellus bibendum felis nulla, imperdiet sociosqu ad
+    fames id lobortis venenatis vehicula senectus, morbi facilisi duis ultrices
+    rutrum pellentesque nisi nec velit. Iaculis nullam vitae cursus hendrerit
+    mauris at mollis augue taciti class ridiculus enim praesent inceptos nostra,
+    diam neque lectus elementum faucibus dignissim non volutpat quis ullamcorper
+    aliquet a donec. Maecenas at class nisi diam erat egestas dapibus ut
+    vestibulum hac, luctus nec blandit nullam ac praesent condimentum convallis
+    orci ornare, malesuada penatibus potenti volutpat parturient nascetur
+    fringilla facilisi risus. Quisque nascetur rutrum pharetra a elementum dis
+    ultrices class nullam curae erat, faucibus tellus platea urna augue porta
+    turpis primis et. Auctor sociosqu bibendum sagittis rutrum arcu proin aenean
+    habitant leo, aliquam potenti ac suscipit curae diam vivamus urna, dui
+    dapibus primis hendrerit nisi augue nibh nascetur.</p>
+
+    <!------------------------------------------------------------------------->
+
+    <script src="ersatz_jquery.js"></script>
+    <script>
+    $(function() {
+        $('#btnshow').on('click', function() {
+            $('.abc').show();
+        });
+
+        $('#btnhide').on('click', function() {
+            $('.abc').hide();
+        });
+
+        let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple',];
+        let i = -1;
+        $('#btnrainbow').on('click', function() {
+            i = (i + 1) % colors.length;
+            $('.rainbow').css('color', colors[i]);
+        })
+    });
+    </script>
+</body>
+</html>
