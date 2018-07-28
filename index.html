@@ -46,44 +46,27 @@
     non libero nisl luctus dignissim curae mus sodales, sapien quisque molestie
     netus ligula mattis nostra eu facilisi dictumst lacinia.</p>
 
-    <p class="rainbow">Est facilisi taciti felis imperdiet id leo convallis
-    morbi sed suspendisse, fermentum potenti risus vivamus vulputate pretium
-    sollicitudin eros dapibus auctor, blandit dui fames malesuada nec ultrices
-    cum a augue. Rhoncus molestie pellentesque imperdiet posuere id pharetra
-    eros maecenas vehicula phasellus vulputate, sapien velit litora curae
-    ridiculus ut pulvinar tellus porta conubia. Sed posuere quisque potenti
-    justo aliquet nibh phasellus bibendum felis nulla, imperdiet sociosqu ad
-    fames id lobortis venenatis vehicula senectus, morbi facilisi duis ultrices
-    rutrum pellentesque nisi nec velit. Iaculis nullam vitae cursus hendrerit
-    mauris at mollis augue taciti class ridiculus enim praesent inceptos nostra,
-    diam neque lectus elementum faucibus dignissim non volutpat quis ullamcorper
-    aliquet a donec. Maecenas at class nisi diam erat egestas dapibus ut
-    vestibulum hac, luctus nec blandit nullam ac praesent condimentum convallis
-    orci ornare, malesuada penatibus potenti volutpat parturient nascetur
-    fringilla facilisi risus. Quisque nascetur rutrum pharetra a elementum dis
-    ultrices class nullam curae erat, faucibus tellus platea urna augue porta
-    turpis primis et. Auctor sociosqu bibendum sagittis rutrum arcu proin aenean
-    habitant leo, aliquam potenti ac suscipit curae diam vivamus urna, dui
-    dapibus primis hendrerit nisi augue nibh nascetur.</p>
+    <p class="rainbow">COLOR</p>
 
     <!------------------------------------------------------------------------->
 
     <script src="ersatz_jquery.js"></script>
     <script>
-    $(function() {
-        $('#btnshow').on('click', function() {
-            $('.abc').show();
-        });
+    $(() => {
+        let i = 0, colors = [
+            'red', 'orange', 'yellow', 'green', 'blue', 'purple',
+        ];
 
-        $('#btnhide').on('click', function() {
-            $('.abc').hide();
-        });
+        $('#btnshow').on('click', () => $('.abc').show());
 
-        let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple',];
-        let i = -1;
-        $('#btnrainbow').on('click', function() {
-            i = (i + 1) % colors.length;
-            $('.rainbow').css('color', colors[i]);
+        $('#btnhide').on('click', () => $('.abc').hide());
+
+        $('#btnrainbow').on('click', () => {
+            $('.rainbow')
+                .show()
+                .text(colors[i].toUpperCase())
+                .css('color', colors[i]);
+            i = ++i % colors.length;
         })
     });
     </script>
