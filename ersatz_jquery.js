@@ -19,7 +19,8 @@ let $ = a => {
         },
 
         css: (k, v) => {
-            if (typeof k == 'undefined') return _[0].style[k];
+            if (typeof k == 'undefined') return _[0].style;
+            if (typeof v == 'undefined') return _[0].style[k];
             _.forEach(el => el.style[k] = v);
             return $(_);
         },
