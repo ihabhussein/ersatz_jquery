@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <button id="btnshow">Show</button>
+    <button id="btnshow" disabled>Show</button>
     <button id="btnhide">Hide</button>
     <button id="btnrainbow">Rainbow</button>
 
@@ -25,6 +25,8 @@
     Praesent lacinia nascetur volutpat class auctor hac consequat mattis, libero
     integer condimentum commodo tempus quisque id platea, ac dui habitasse nam
     fusce maecenas facilisi.</p>
+
+    <p class="rainbow">COLOR</p>
 
     <p class="abc">Sed metus neque vivamus malesuada a rhoncus rutrum fringilla
     interdum ad, montes scelerisque elementum praesent bibendum nam cursus netus
@@ -46,20 +48,29 @@
     non libero nisl luctus dignissim curae mus sodales, sapien quisque molestie
     netus ligula mattis nostra eu facilisi dictumst lacinia.</p>
 
-    <p class="rainbow">COLOR</p>
-
     <!------------------------------------------------------------------------->
 
     <script src="../lib/ersatz_jquery.js"></script>
     <script>
     $(() => {
+        let btnShow = $('#btnshow');
+        let btnHide = $('#btnhide');
+
         let i = 0, colors = [
             'red', 'orange', 'yellow', 'green', 'blue', 'purple',
         ];
 
-        $('#btnshow').on('click', () => $('.abc').show());
+        btnShow.on('click', ev => {
+            $('.abc').show();
+            btnShow.prop('disabled', true);
+            btnHide.prop('disabled',false);
+        });
 
-        $('#btnhide').on('click', () => $('.abc').hide());
+        btnHide.on('click', ev => {
+            $('.abc').hide();
+            btnHide.prop('disabled', true);
+            btnShow.prop('disabled', false);
+        });
 
         $('#btnrainbow').on('click', () => {
             $('.rainbow')
